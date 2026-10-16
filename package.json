@@ -1,0 +1,33 @@
+{
+  "name": "create-visage",
+  "version": "1.0.0",
+  "description": "Scaffold a new Visage project",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "create-visage": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --target node --outfile dist/index.js --banner '#!/usr/bin/env node'",
+    "typecheck": "tsc --noEmit",
+    "dev": "bun run src/index.ts"
+  },
+  "keywords": [
+    "create",
+    "visage",
+    "scaffold",
+    "template",
+    "cli",
+    "reactive",
+    "signals",
+    "zero-vdom"
+  ],
+  "author": "Epoch32",
+  "license": "MPL-2.0"
+}
