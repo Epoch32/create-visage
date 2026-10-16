@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Epoch32/create-visage/compare/create-visage-v1.1.0...create-visage-v1.1.1) (2026-10-16)
+
+
+### Bug Fixes
+
+* **rpc-template:** define procedure handlers with resolve property ([1b5eb15](https://github.com/Epoch32/create-visage/commit/1b5eb155c458f0c8242096c674d2b4fb0d838261))
+
 ## [1.1.0](https://github.com/Epoch32/create-visage/compare/create-visage-v1.0.2...create-visage-v1.1.0) (2026-10-16)
 
 
