@@ -29,5 +29,16 @@
     "zero-vdom"
   ],
   "author": "Epoch32",
-  "license": "MPL-2.0"
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Epoch32/create-visage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Epoch32/create-visage/issues"
+  },
+  "homepage": "https://github.com/Epoch32/create-visage#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
