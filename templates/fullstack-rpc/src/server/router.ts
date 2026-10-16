@@ -13,26 +13,32 @@ let todos: TodoItem[] = [
 ];
 
 export const appRouter = createRouter({
-  getTodos: query(() => {
-    return todos;
-  }),
-
-  addTodo: mutation(({ input }: { input: { title: string } }) => {
-    const newTodo: TodoItem = {
-      id: String(Date.now()),
-      title: input.title,
-      completed: false
-    };
-    todos.push(newTodo);
-    return newTodo;
-  }),
-
-  toggleTodo: mutation(({ input }: { input: { id: string } }) => {
-    const item = todos.find((t) => t.id === input.id);
-    if (item) {
-      item.completed = !item.completed;
+  getTodos: query({
+    resolve: () => {
+      return todos;
     }
-    return item ?? null;
+  }),
+
+  addTodo: mutation({
+    resolve: ({ input }: { input: { title: string } }) => {
+      const newTodo: TodoItem = {
+        id: String(Date.now()),
+        title: input.title,
+        completed: false
+      };
+      todos.push(newTodo);
+      return newTodo;
+    }
+  }),
+
+  toggleTodo: mutation({
+    resolve: ({ input }: { input: { id: string } }) => {
+      const item = todos.find((t) => t.id === input.id);
+      if (item) {
+        item.completed = !item.completed;
+      }
+      return item ?? null;
+    }
   })
 });
 
