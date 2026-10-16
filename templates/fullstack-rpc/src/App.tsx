@@ -9,7 +9,7 @@ interface Todo {
 }
 
 const client = createClient<AppRouter>({
-  endpoint: "/api/rpc"
+  baseUrl: "/api/rpc"
 });
 
 export function App() {
