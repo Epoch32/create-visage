@@ -1,4 +1,4 @@
-import { signal, onMount } from "@epoch32/visage";
+import { signal } from "@epoch32/visage";
 import { createClient } from "@epoch32/visage/rpc";
 import type { AppRouter } from "./server/router";
 
@@ -26,9 +26,7 @@ export function App() {
     }
   }
 
-  onMount(() => {
-    loadTodos();
-  });
+  loadTodos();
 
   async function handleAdd(e: Event) {
     e.preventDefault();

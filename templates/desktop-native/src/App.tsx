@@ -1,4 +1,4 @@
-import { signal, onMount } from "@epoch32/visage";
+import { signal } from "@epoch32/visage";
 import { native } from "@epoch32/visage/native";
 
 interface SystemInfo {
@@ -11,16 +11,15 @@ export function App() {
   const sysInfo = signal<SystemInfo>({ os: "detecting...", arch: "" });
   const clicks = signal(0);
 
-  onMount(async () => {
-    try {
-      const res = await native.invoke<SystemInfo>("getSystemInfo");
+  native.invoke<SystemInfo>("getSystemInfo")
+    .then((res) => {
       if (res && res.os) {
         sysInfo.set(res);
       }
-    } catch {
+    })
+    .catch(() => {
       // Running inside web preview mode
-    }
-  });
+    });
 
   return (
     <div>
